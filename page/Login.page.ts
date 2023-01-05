@@ -1,8 +1,5 @@
-import { expect, Locator, Page } from "@playwright/test";
-
-
-export default class HomePage {
-
+import { Page } from "@playwright/test";
+export default class LoginPage {
 
     constructor(public page: Page){
     }

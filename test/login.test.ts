@@ -1,9 +1,9 @@
 import { test, expect } from "@playwright/test";
-import HomePage from "../page/Home.page";
+import ProductsPage from "../page/Products.page";
 import LoginPage from "../page/Login.page";
 import * as users from "../data/credentials.json";
 
-test.describe("Login", async () => {
+test.describe("Login Feature", async () => {
 
     let loginPage: LoginPage;
 
@@ -19,9 +19,9 @@ test.describe("Login", async () => {
     
         await loginPage.clickLoginButon();
 
-        const homePage = new HomePage(page);
+        const productsPage = new ProductsPage(page);
 
-        expect(await homePage.getTitle).toBe("Products");
+        expect(await productsPage.getTitle).toBe("Products");
     });
 
     test("Positive: Problem user tries to login with correct credentials.", async ({ page }) => {
@@ -31,9 +31,9 @@ test.describe("Login", async () => {
     
         await loginPage.clickLoginButon();
 
-        const homePage = new HomePage(page);
+        const productsPage = new ProductsPage(page);
 
-        expect(await homePage.getTitle).toBe("Products");
+        expect(await productsPage.getTitle).toBe("Products");
     });
 
     test("Positive: Performance user tries to login with correct credentials.", async ({ page }) => {
@@ -43,9 +43,9 @@ test.describe("Login", async () => {
     
         await loginPage.clickLoginButon();
 
-        const homePage = new HomePage(page);
+        const productsPage = new ProductsPage(page);
 
-        expect(await homePage.getTitle).toBe("Products");
+        expect(await productsPage.getTitle).toBe("Products");
     });
 
 
