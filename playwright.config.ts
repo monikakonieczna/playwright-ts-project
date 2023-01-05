@@ -2,9 +2,9 @@ import type {PlaywrightTestConfig} from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
     
-    testMatch: ["test/Register.test.ts"],
+    testMatch: ["test/Login.test.ts"],
     use: {
-        baseURL: "https://parabank.parasoft.com/parabank/index.htm",
+        baseURL: "https://www.saucedemo.com/",
         headless: false,
         screenshot: "on",
         video: "on",

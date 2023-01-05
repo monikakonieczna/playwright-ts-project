@@ -8,16 +8,20 @@ export default class HomePage {
     }
 
     async enterUsername(username: string){
-        await this.page.locator("input[name='username']").type(username);
+        await this.page.locator("input[data-test='username']").type(username);
     }
 
     async enterPassword(password: string){
-        await this.page.locator("input[name='password']").type(password);
+        await this.page.locator("input[data-test='password']").type(password);
     }
 
 
     async clickLoginButon(){
-        await this.page.click("input[value='Log In']");
+        await this.page.click("input[data-test='login-button']");
+    }
+
+    get getErrorMessage(){
+        return this.page.locator("h3[data-test='error']").textContent();
     }
 
 }

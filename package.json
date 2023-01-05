@@ -7,8 +7,8 @@
     "play:test": "npx playwright test",
     "play:test-chrome": "npx playwright test --project=chromium",
     "play:debug": "npx playwright test --debug",
-    "play:report": "npx playwright show-report",
-    "test": "npx playwright test Register.test.ts --debug"
+    "report": "npx playwright show-report",
+    "test": "npx playwright test"
   },
   "repository": {
     "type": "git",
