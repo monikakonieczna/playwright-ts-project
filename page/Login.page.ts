@@ -16,26 +16,8 @@ export default class HomePage {
     }
 
 
-    async clickHomeLink() {
-        await this.page.click("a:text('home')");
-    }
-
-    async clickRegisterLink(){
-        expect(this.page.locator("a[href='lookup.htm']")).toBeVisible();
-        await this.page.click("a[href='lookup.htm']", { strict: true });
-    }
-
     async clickLoginButon(){
         await this.page.click("input[value='Log In']");
     }
-
-
-
-
-
-
-
-
-
 
 }

@@ -3,10 +3,7 @@ import { Page } from "@playwright/test";
 
 export default class HomePage {
 
-    private page:Page;
-
-    constructor(page: Page){
-        this.page=page;
+    constructor(public page: Page){
     }
 
     //Locators
