@@ -21,6 +21,14 @@ export default class CartPage {
         return this.page.locator(".inventory_item_price").textContent();
     }
 
+    async removeItem(product: String){
+        await this.page.locator("button[data-test*='" + product + "']").click();
+    }
+
+    get getShoppingCartBadge(){
+        return this.page.locator(".shopping_cart_badge");
+    }
+
     
 
 }

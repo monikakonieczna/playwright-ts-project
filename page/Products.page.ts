@@ -19,8 +19,16 @@ export default class ProductsPage {
         return await this.page.locator(".shopping_cart_badge").isEnabled();
     }
 
+    get getCartItemsAmount(){
+        return this.page.locator(".shopping_cart_badge").textContent();
+    }
+
     async navigateToCart(){
         await this.page.locator(".shopping_cart_link").click();
+    }
+
+    get getTextFromBackpackButton(){
+        return this.page.locator("button[data-test*='backpack']").textContent();
     }
 
 }
