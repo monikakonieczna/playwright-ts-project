@@ -8,7 +8,7 @@
     "play:test-chrome": "npx playwright test --project=chromium",
     "play:debug": "npx playwright test --debug",
     "report": "npx playwright show-report",
-    "test": "npx playwright test"
+    "test-s": "npx playwright test -g @sorting"
   },
   "repository": {
     "type": "git",

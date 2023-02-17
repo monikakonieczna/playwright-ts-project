@@ -2,7 +2,7 @@ import type {PlaywrightTestConfig} from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
     
-    testMatch: ["test/Cart.test.ts"],
+    //testMatch: ["test/"],
     use: {
         baseURL: "https://www.saucedemo.com/",
         headless: false,

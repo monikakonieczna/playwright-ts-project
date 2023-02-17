@@ -1,34 +1,67 @@
 import { expect, Locator, Page } from "@playwright/test";
+import { Select } from '../utils/enums/select.enum';
+import * as selectors from '../utils/selectors.json';
 
 
 export default class ProductsPage {
 
 
-    constructor(public page: Page){
+    constructor(public page: Page) {
     }
 
-    get getTitle(){
+    selectMap = new Map<Select, string>([
+        [Select.SORT, selectors.ProductsPage.sortSelect]
+    ])
+
+    get getTitle() {
         return this.page.locator("span[class='title']").textContent();
     }
 
-    async addToCart(product: string){
+    async addToCart(product: string) {
         await this.page.locator("button[data-test*='" + product + "']").click();
     }
 
-    async isAddedToCart(){
+    async isAddedToCart() {
         return await this.page.locator(".shopping_cart_badge").isEnabled();
     }
 
-    get getCartItemsAmount(){
+    get getCartItemsAmount() {
         return this.page.locator(".shopping_cart_badge").textContent();
     }
 
-    async navigateToCart(){
+    async navigateToCart() {
         await this.page.locator(".shopping_cart_link").click();
     }
 
-    get getTextFromBackpackButton(){
+    get getTextFromBackpackButton() {
         return this.page.locator("button[data-test*='backpack']").textContent();
     }
 
+    public getSelect(select: Select): Locator {
+        //not null assertion operator
+        return this.page.locator(this.selectMap.get(select)!);
+    }
+
+    async selectByValue(value: string, select: Select) {
+        const dropdown = this.getSelect(select);
+        await dropdown.selectOption(value);
+    }
+
+    async getProductsNames() {
+        const itemsNamesList = await this.page.$$(selectors.ProductsPage.productsTitles);
+        const titlesArray: string[]= [];
+        for (let i = 0; i < itemsNamesList.length; i++) {
+            titlesArray[i] = (await itemsNamesList[i].textContent())!;
+        }
+        return titlesArray;
+    }
+
+    async getProductsPrice() {
+        const itemsPriceList = await this.page.$$(selectors.ProductsPage.productsPrices);
+        const pricesArray: string[]= [];
+        for (let i = 0; i < itemsPriceList.length; i++) {
+            pricesArray[i] = (await itemsPriceList[i].textContent())!;
+        }
+        return pricesArray;
+    }
 }
