@@ -33,14 +33,14 @@ test.describe("Sorting Feature. @sorting", async () => {
     });
 
     test("Positive: User can sort the products by price (high to low).", async ({ page }) => {
-       //Select sorting by Price(low to high)
-       await productsPage.selectByValue("hilo", Select.SORT);
+        //Select sorting by Price(low to high)
+        await productsPage.selectByValue("hilo", Select.SORT);
 
-       //get all prices on a page
-       const productsPrices = utility.convertStringArrayIntoNumberArray(await productsPage.getProductsPrice());
-       const sortedPrices = utility.sortPriceDESC(productsPrices);
-       const haveSameOrder = utility.compareNumArrays(productsPrices, sortedPrices);
-       expect(haveSameOrder).toBe(true);
+        //get all prices on a page
+        const productsPrices = utility.convertStringArrayIntoNumberArray(await productsPage.getProductsPrice());
+        const sortedPrices = utility.sortPriceDESC(productsPrices);
+        const haveSameOrder = utility.compareNumArrays(productsPrices, sortedPrices);
+        expect(haveSameOrder).toBe(true);
     });
 
     test("Positive: User can sort the products by name (a to z).", async ({ page }) => {

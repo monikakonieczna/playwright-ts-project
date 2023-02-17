@@ -10,7 +10,7 @@ test.describe("Cart Feature", async () => {
     let productsPage: ProductsPage;
     let cartPage: CartPage;
 
-    test.beforeEach(async ({ page, baseURL}) => {
+    test.beforeEach(async ({ page, baseURL }) => {
         loginPage = new LoginPage(page);
         await page.goto(`${baseURL}`);
         await loginPage.enterUsername(users.standard.username);
@@ -35,7 +35,7 @@ test.describe("Cart Feature", async () => {
         //check that element is in the cart
         expect(await cartPage.getCartQuantity).toBe("1");
         expect(await cartPage.getItemName).toBe("Sauce Labs Backpack");
-    
+
     });
 
     test("Positive: Standard user tries to add 1 product to the cart and remove.", async ({ page }) => {
@@ -50,7 +50,7 @@ test.describe("Cart Feature", async () => {
 
         //remove backpack from the cart
         await productsPage.addToCart("backpack");
-    
+
     });
 
     test("Positive: Standard user tries to add 1 product to the cart and then delete from the cart.", async ({ page }) => {
@@ -75,7 +75,7 @@ test.describe("Cart Feature", async () => {
         expect(cartPage.getShoppingCartBadge).toBeNull;
 
 
-    
+
     });
 
     test("Positive: Standard user tries to add 2 products to the cart.", async ({ page }) => {

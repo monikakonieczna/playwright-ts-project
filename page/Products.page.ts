@@ -49,7 +49,7 @@ export default class ProductsPage {
 
     async getProductsNames() {
         const itemsNamesList = await this.page.$$(selectors.ProductsPage.productsTitles);
-        const titlesArray: string[]= [];
+        const titlesArray: string[] = [];
         for (let i = 0; i < itemsNamesList.length; i++) {
             titlesArray[i] = (await itemsNamesList[i].textContent())!;
         }
@@ -58,7 +58,7 @@ export default class ProductsPage {
 
     async getProductsPrice() {
         const itemsPriceList = await this.page.$$(selectors.ProductsPage.productsPrices);
-        const pricesArray: string[]= [];
+        const pricesArray: string[] = [];
         for (let i = 0; i < itemsPriceList.length; i++) {
             pricesArray[i] = (await itemsPriceList[i].textContent())!;
         }

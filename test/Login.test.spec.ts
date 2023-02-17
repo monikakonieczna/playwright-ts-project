@@ -7,7 +7,7 @@ test.describe("Login Feature", async () => {
 
     let loginPage: LoginPage;
 
-    test.beforeEach(async ({ page, baseURL}) => {
+    test.beforeEach(async ({ page, baseURL }) => {
         loginPage = new LoginPage(page);
         await page.goto(`${baseURL}`);
     })
@@ -16,7 +16,7 @@ test.describe("Login Feature", async () => {
 
         await loginPage.enterUsername(users.standard.username);
         await loginPage.enterPassword(users.standard.password);
-    
+
         await loginPage.clickLoginButon();
 
         const productsPage = new ProductsPage(page);
@@ -28,7 +28,7 @@ test.describe("Login Feature", async () => {
 
         await loginPage.enterUsername(users.problem.username);
         await loginPage.enterPassword(users.problem.password);
-    
+
         await loginPage.clickLoginButon();
 
         const productsPage = new ProductsPage(page);
@@ -40,7 +40,7 @@ test.describe("Login Feature", async () => {
 
         await loginPage.enterUsername(users.performance.username);
         await loginPage.enterPassword(users.performance.password);
-    
+
         await loginPage.clickLoginButon();
 
         const productsPage = new ProductsPage(page);
@@ -50,30 +50,30 @@ test.describe("Login Feature", async () => {
 
 
     test("Negative: User tries to login without credentials.", async ({ page }) => {
-    
+
         await loginPage.enterUsername("");
         await loginPage.enterPassword("");
-    
+
         await loginPage.clickLoginButon();
 
         expect(await loginPage.getErrorMessage).toBe("Epic sadface: Username is required");
     });
 
     test("Negative: User tries to login without password.", async ({ page }) => {
-    
+
         await loginPage.enterUsername(users.standard.username);
         await loginPage.enterPassword("");
-    
+
         await loginPage.clickLoginButon();
 
         expect(await loginPage.getErrorMessage).toBe("Epic sadface: Password is required");
     });
 
     test("Negative: User tries to login without username.", async ({ page }) => {
-    
+
         await loginPage.enterUsername("");
         await loginPage.enterPassword(users.standard.password);
-    
+
         await loginPage.clickLoginButon();
 
         expect(await loginPage.getErrorMessage).toBe("Epic sadface: Username is required");
