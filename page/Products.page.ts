@@ -14,7 +14,7 @@ export default class ProductsPage {
     ])
 
     get getTitle() {
-        return this.page.locator("span[class='title']").textContent();
+        return this.page.locator(selectors.ProductsPage.pageTittle).textContent();
     }
 
     async addToCart(product: string) {
@@ -22,19 +22,19 @@ export default class ProductsPage {
     }
 
     async isAddedToCart() {
-        return await this.page.locator(".shopping_cart_badge").isEnabled();
+        return await this.page.locator(selectors.ProductsPage.cartBadge).isEnabled();
     }
 
     get getCartItemsAmount() {
-        return this.page.locator(".shopping_cart_badge").textContent();
+        return this.page.locator(selectors.ProductsPage.cartBadge).textContent();
     }
 
     async navigateToCart() {
-        await this.page.locator(".shopping_cart_link").click();
+        await this.page.locator(selectors.ProductsPage.cartLink).click();
     }
 
     get getTextFromBackpackButton() {
-        return this.page.locator("button[data-test*='backpack']").textContent();
+        return this.page.locator(selectors.ProductsPage.backpackButton).textContent();
     }
 
     public getSelect(select: Select): Locator {

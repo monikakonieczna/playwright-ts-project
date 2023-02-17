@@ -2,6 +2,23 @@
     "ProductsPage": { 
         "sortSelect": ".product_sort_container",
         "productsTitles": ".inventory_item_name",
-        "productsPrices": ".inventory_item_price"
+        "productsPrices": ".inventory_item_price",
+        "pageTittle": "span[class='title']",
+        "cartBadge": ".shopping_cart_badge",
+        "cartLink": ".shopping_cart_link",
+        "backpackButton": "button[data-test*='backpack']"
+    },
+    "LoginPage": {
+        "usernameInput": "input[data-test='username']",
+        "passwordInput": "input[data-test='password']",
+        "loginButton": "input[data-test='login-button']",
+        "errorMessage": "h3[data-test='error']"
+    },
+    "CartPage": {
+        "pageTittle": ".title",
+        "cartQuantityBadge": ".cart_quantity",
+        "itemName": ".inventory_item_name",
+        "itemPrice": ".inventory_item_price",
+        "cartBadge": ".shopping_cart_badge"
     }
 }

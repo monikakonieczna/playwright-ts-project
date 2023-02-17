@@ -1,24 +1,26 @@
 import { Page } from "@playwright/test";
+import * as selectors from '../utils/selectors.json';
+
 export default class LoginPage {
 
     constructor(public page: Page) {
     }
 
     async enterUsername(username: string) {
-        await this.page.locator("input[data-test='username']").type(username);
+        await this.page.locator(selectors.LoginPage.usernameInput).type(username);
     }
 
     async enterPassword(password: string) {
-        await this.page.locator("input[data-test='password']").type(password);
+        await this.page.locator(selectors.LoginPage.passwordInput).type(password);
     }
 
 
     async clickLoginButon() {
-        await this.page.click("input[data-test='login-button']");
+        await this.page.click(selectors.LoginPage.loginButton);
     }
 
     get getErrorMessage() {
-        return this.page.locator("h3[data-test='error']").textContent();
+        return this.page.locator(selectors.LoginPage.errorMessage).textContent();
     }
 
 }

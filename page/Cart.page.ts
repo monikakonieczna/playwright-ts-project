@@ -1,4 +1,5 @@
 import { Page } from "@playwright/test";
+import * as selectors from '../utils/selectors.json';
 
 
 export default class CartPage {
@@ -6,19 +7,19 @@ export default class CartPage {
     constructor(public page: Page) { }
 
     get getTitle() {
-        return this.page.locator(".title").textContent();
+        return this.page.locator(selectors.CartPage.pageTittle).textContent();
     }
 
     get getCartQuantity() {
-        return this.page.locator(".cart_quantity").textContent();
+        return this.page.locator(selectors.CartPage.cartQuantityBadge).textContent();
     }
 
     get getItemName() {
-        return this.page.locator(".inventory_item_name").textContent();
+        return this.page.locator(selectors.CartPage.itemName).textContent();
     }
 
     get getItemPrice() {
-        return this.page.locator(".inventory_item_price").textContent();
+        return this.page.locator(selectors.CartPage.itemPrice).textContent();
     }
 
     async removeItem(product: String) {
@@ -26,7 +27,7 @@ export default class CartPage {
     }
 
     get getShoppingCartBadge() {
-        return this.page.locator(".shopping_cart_badge");
+        return this.page.locator(selectors.CartPage.cartBadge);
     }
 
 
