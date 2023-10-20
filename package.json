@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "play:test": "npx playwright test",
-    "play:test-chrome": "npx playwright test --project=chromium",
     "play:debug": "npx playwright test --debug",
     "report": "npx playwright show-report",
-    "test-s": "npx playwright test -g @sorting"
+    "test-s": "npx playwright test -g @sorting",
+    "test-l": "npx playwright test -g @login",
+    "test-c": "npx playwright test -g @cart"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,7 @@
   },
   "homepage": "https://github.com/monikakonieczna/playwright-project#readme",
   "devDependencies": {
-    "@playwright/test": "^1.29.1",
+    "@playwright/test": "^1.39.0",
     "@types/faker": "^6.6.9",
     "@types/jest": "^29.2.4",
     "faker": "^5.5.3",

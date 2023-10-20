@@ -3,7 +3,7 @@ import ProductsPage from "../page/Products.page";
 import LoginPage from "../page/Login.page";
 import * as users from "../data/credentials.json";
 
-test.describe("Login Feature", async () => {
+test.describe("Login Feature @login", async () => {
 
     let loginPage: LoginPage;
 

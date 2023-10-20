@@ -4,7 +4,7 @@ import LoginPage from "../page/Login.page";
 import CartPage from "../page/Cart.page";
 import * as users from "../data/credentials.json";
 
-test.describe("Cart Feature", async () => {
+test.describe("Cart Feature @cart", async () => {
 
     let loginPage: LoginPage;
     let productsPage: ProductsPage;

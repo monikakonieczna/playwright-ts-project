@@ -14,15 +14,31 @@ End to End testing using:
 
 This tests are purely for Playwright features practice, usage of Page Object Model.
 
-
 ## Getting Started
 
 ### Prerequisites
+Install Playwright and browser binaries for Chromium, Firefox and WebKit.
+```shell
+npm i -D playwright
+```
+You need to have Node.js installed.
 
 ## Useful Commands
 
-### Run all tests in Playwright
+### Run All Tests
 
 ```shell
-npx playwright test
+npm run play:test
+```
+### Run Tests for Sorting Feature
+```shell
+npm run test-s
+```
+### Run Tests for Login Feature
+```shell
+npm run test-l
+```
+### Run Tests for Cart Feature
+```shell
+npm run test-c
 ```

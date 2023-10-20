@@ -11,8 +11,6 @@ export function compareStringArraysWithOrder(arr1: Array<string>, arr2: Array<st
 }
 
 export function compareNumArrays(arr1: Array<number>, arr2: Array<number>) {
-    console.log(arr1.toString());
-    console.log(arr2.toString());
     return arr1.toString() === arr2.toString();
 }
 
